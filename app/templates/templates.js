@@ -11,9 +11,10 @@ angular
         controller: 'TemplateDetailsCtrl'
       })
   }])
-  .controller('TemplatesCtrl', ['$scope', function($scope) {
-    console.log($scope);
+  .controller('TemplatesCtrl', ['$scope', '$http', function($scope, $http) {
+    $http.get('json/templates.json').then(function(response) {
+      $scope.templates = response.data;
+    })
   }])
   .controller('TemplateDetailsCtrl', ['$scope', function($scope) {
-    console.log($scope);
   }])
