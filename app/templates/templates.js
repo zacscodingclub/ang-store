@@ -16,5 +16,13 @@ angular
       $scope.templates = response.data;
     })
   }])
-  .controller('TemplateDetailsCtrl', ['$scope', function($scope) {
+  .controller('TemplateDetailsCtrl', ['$scope', '$http', '$routeParams', '$filter', function($scope, $http, $routeParams, $filter) {
+    var templateId = $routeParams.templateId;
+    $http.get('json/templates.json').then(function(response) {
+      $scope.template = $filter('filter')(response.data, function(d) {
+        return d.id == templateId;
+      })[0];
+
+      $scope.mainImage = $scope.template.images[0].name;
+    })
   }])

@@ -2,12 +2,14 @@
   <a href="#/templates">Go Back</a>
   <br><br>
   <div class="col-md-4">
-    <img src="img/blue.jpg" class="img-full" alt="template-image">
+    <img src="img/{{ mainImage }}" class="img-full" alt="template-image">
   </div>
   <div class="col-md-8">
-    <h3>Blue Template</h3>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates omnis, autem odit minus praesentium maiores iste sequi, nulla, molestiae nemo, quaerat doloribus nostrum? Quis laboriosam ratione recusandae aspernatur nesciunt vero?</p>
-    <h4>$19.99</h4>
-    BUY NOW
+    <h3>{{ template.name }}</h3>
+    <p>{{ template.description }}</p>
+    <p>Type: {{ template.type }}</p>
+    <h4>{{ template.price | currency}}</h4>
+
+    <button class="btn btn-primary">BUY NOW</button>
   </div>
 </div>
