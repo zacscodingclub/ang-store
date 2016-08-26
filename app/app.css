@@ -29,6 +29,10 @@
   padding: 0;
 }
 
+.img-full {
+  width:100%;
+}
+
 .templates {
   text-align: center;
 }
