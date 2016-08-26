@@ -25,4 +25,8 @@ angular
 
       $scope.mainImage = $scope.template.images[0].name;
     })
+
+    $scope.setImage = function(image) {
+      $scope.mainImage = image.name;
+    }
   }])
